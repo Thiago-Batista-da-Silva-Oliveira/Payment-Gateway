@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { CreatePreferenceController } from "../useCases/CreatePreference/CreatePreferenceController";
+import { CreatePreferenceController } from "../../../useCases/CreatePreference/CreatePreferenceController";
 
 export const paymentRoutes = Router();
 

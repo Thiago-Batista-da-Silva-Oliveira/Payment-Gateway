@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { paymentRoutes } from "../../../modules/payment/routes";
+import { paymentRoutes } from "../../../modules/payment/infra/http/routes";
 
 
 export const routes = Router();
