@@ -3,12 +3,13 @@ import { CreatePreferenceService } from "./CreatePreferenceService";
 
 export class CreatePreferenceController {
   async handle(req: Request, res: Response) {
-    const { description, price, quantity } = req.body;
+    const { description, price, quantity, userId } = req.body;
     const createPreferenceService = new CreatePreferenceService();
     const preference = await createPreferenceService.execute({
       description,
       price,
       quantity,
+      userId,
     });
 
     return res.status(201).json({

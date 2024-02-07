@@ -1,6 +1,7 @@
 
 export interface ICreatePaymentDTO {
-  description: string;
+  description?: string;
   price: number;
   quantity: string;
+  userId: string;
 };

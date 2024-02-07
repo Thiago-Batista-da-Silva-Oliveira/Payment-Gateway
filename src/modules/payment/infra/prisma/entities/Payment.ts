@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+import { randomUUID } from 'crypto';
 
 export class Payment {
   id?: string;
@@ -11,7 +11,7 @@ export class Payment {
 
   private constructor(data: Payment) {
     if (!this.id) {
-      this.id = nanoid();
+      this.id = randomUUID();
     }
     if (!this.createdAt) {
       this.createdAt = new Date();
