@@ -10,12 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum PaymentStatus {
+  PENDING
+  PAID
+  CANCELED
+}
+
 model Payment {
   id          String   @id
   userId      String
   description String?
   price       Float
   quantity    Float
+  status      PaymentStatus @default(PENDING)
   createdAt   DateTime @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt   DateTime @default(now()) @map("updated_at") @db.DateTime(0)
 

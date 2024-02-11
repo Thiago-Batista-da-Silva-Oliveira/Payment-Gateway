@@ -5,6 +5,7 @@ export class Payment {
   userId: string;
   description?: string;
   price: number;
+  status?: "PENDING" | "APPROVED" | "CANCELLED";
   quantity: number;
   createdAt?: Date;
   updatedAt?: Date;
@@ -18,6 +19,10 @@ export class Payment {
     }
     if (!this.updatedAt) {
       this.updatedAt = new Date();
+    }
+
+    if (!this.status) {
+      this.status = "PENDING";
     }
 
     Object.assign(this, { ...data });
